@@ -2,6 +2,13 @@
 #include <iostream>
 using namespace std;
 
+Date::Date()
+{
+	this->jour = 1;
+	this->mois = 1;
+	this->annee = 1;
+}
+
 Date::Date(int j, int m, int a) {
 	annee = a;
 	if (m < 1 || m > 12) {
@@ -31,6 +38,19 @@ Date::Date(int j, int m, int a) {
 		jour = j;
 }
 
+Date::Date(const Date& autre)
+{
+	this->jour = autre.jour;
+	this->mois = autre.mois;
+	this->annee = autre.annee;
+}
+
 void Date::afficher() const {
 	cout << jour << "/" << mois << "/" << annee;
+}
+
+ostream& operator<<(ostream& sortie, const Date& date)
+{
+	sortie << date.jour << "/" << date.mois << "/" << date.annee;
+	return sortie;
 }

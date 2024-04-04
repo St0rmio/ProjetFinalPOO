@@ -9,7 +9,7 @@ class BienImmobilier {
 	string type;
 	string statut;
 public:
-	BienImmobilier(int, string, double, string);	// Le type sera automatiquement déterminé par la sous-classe où on exécute le constructeur
+	BienImmobilier(int, string, double, string, string);
 	virtual void afficherDetails() const;
 	void mettreAJourStatut(string nouveauStatut);
 };

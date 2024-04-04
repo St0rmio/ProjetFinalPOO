@@ -4,11 +4,11 @@
 
 using namespace std;
 
-BienImmobilier::BienImmobilier(int id, string adresse, double surface, string statut) {
+BienImmobilier::BienImmobilier(int id, string adresse, double surface, string type, string statut) {
 	this->id = id;
 	this->adresse = adresse;
 	this->surface = surface;
-	this->type = "NoType";
+	this->type = type;
 	this->statut = statut;
 }
 

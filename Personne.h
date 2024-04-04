@@ -8,6 +8,6 @@ class Personne {
 	string telephone;
 public:
 	Personne(string, string, string);
-	void afficherInfos() const;
+	virtual void afficherInfos() const;
 };
 

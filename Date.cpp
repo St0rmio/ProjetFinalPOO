@@ -12,26 +12,22 @@ Date::Date()
 Date::Date(int j, int m, int a) {
 	annee = a;
 	if (m < 1 || m > 12) {
-		cerr << "Constructeur Date: Mois invalide -> remplacement par 1\n";
-		mois = 1;
+		throw invalid_argument("Constructeur Date: Mois invalide");
 	}
 	else
 		mois = m;
 	
 	// Jour invalide
 	if (j < 1 || j > 31) {
-		cerr << "Constructeur Date: Jour invalide -> remplacement par 1\n";
-		jour = 1;
+		throw invalid_argument("Constructeur Date: Jour invalide");
 	}
 	// Cas du mois de février
 	else if (mois == 2 && j > 28) {
-		cerr << "Constructeur Date: Max 28j pour fevrier -> remplacement du jour par 28\n";
-		jour = 28;
+		throw invalid_argument("Constructeur Date: Max 28j pour fevrier");
 	}
 	// Verification mois de 31 jours
 	else if (j == 31 && (mois == 4 || mois == 6 || mois == 9 || mois == 11)) {
-		cerr << "Constructeur Date: Mois de 30j -> remplacement du jour par 30\n";
-		jour = 30;
+		throw invalid_argument("Constructeur Date: Mois de 30j");
 	}
 	// Jour valide
 	else 

@@ -8,7 +8,10 @@ Contrat::Contrat(int idContrat, Date date, string typeContrat, string termesCont
     this->idContrat = idContrat;
     this->date = date;
     this->typeContrat = typeContrat;
-    this->termesContrat = termesContrat;
+    if (termesContrat.empty())
+        throw invalid_argument("Le termesContrat est vide");
+    else
+        this->termesContrat = termesContrat;
 }
 
 void Contrat::afficherContrat() const

@@ -32,8 +32,13 @@ int main() {
     p.afficherInfos();
 
     cout << "\nContrat : \n";
-    Contrat c(1, Date(2, 4, 2024), "ferme", "license dp");
-    c.afficherContrat();
+    try {
+        Contrat contrat1(1, Date(2, 4, 2024), "ferme", "license dp");
+        contrat1.afficherContrat();
+    }
+    catch (const invalid_argument& e) {
+        cerr << "Erreur: " << e.what() << endl;
+    }
 
     cout << "\nExercice 2 : \n\n";
 
@@ -87,4 +92,36 @@ int main() {
     delete bien1;
     delete bien2;
     delete bien3;
+
+    cout << "\nExercice 4 : \n\n";
+
+    try {
+        // Création d'un contrat avec des termes de contrat vides.
+        Contrat contrat2(101, Date(1, 4, 2024), "Location", "");
+        cout << "Le contrat2 a ete cree : \n";
+        contrat2.afficherContrat();
+    }
+    catch (const invalid_argument& e) {
+        cerr << "Erreur contrat2: " << e.what() << endl;
+    }
+
+    try {
+        // Création d'un contrat avec une mauvaise date.
+        Contrat contrat3(101, Date(0, 4, 2024), "Location", "Le contrat est contrarie");
+        cout << "Le contrat3 a ete cree\n";
+        contrat3.afficherContrat();
+    }
+    catch (const invalid_argument& e) {
+        cerr << "Erreur contrat3: " << e.what() << endl;
+    }
+
+    try {
+        // Création d'un contrat avec des bons paramètres.
+        Contrat contrat4(101, Date(1, 4, 2024), "Location", "Le contrat est contrarie");
+        cout << "Le contrat4 a ete cree\n";
+        contrat4.afficherContrat();
+    }
+    catch (const invalid_argument& e) {
+        cerr << "Erreur contrat4: " << e.what() << endl;
+    }
 }

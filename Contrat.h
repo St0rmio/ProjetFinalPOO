@@ -1,6 +1,8 @@
 #pragma once
+
 #include "Date.h"
 #include <string>
+
 using namespace std;
 
 class Contrat {

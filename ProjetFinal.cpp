@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 #include "BienImmobilier.h"
 #include "Maison.h"
@@ -31,9 +32,14 @@ int main() {
     Personne p("Jean", "Rue de Gaulle", "513-513-8754");
     p.afficherInfos();
 
+    Personne* client2 = new Personne("Jean Dupont", "15 avenue des Lilas", "0123456789");
+    Personne* client3 = new Personne("Alice Martin", "30 rue de la Paix", "9876543210");
+
+    vector<Personne*> clients = { client2, client3 };
+    BienImmobilier* bien = new BienImmobilier(1, "10 rue de la Paix", 150.0, "Maison", "À vendre");
     cout << "\nContrat : \n";
     try {
-        Contrat contrat1(1, Date(2, 4, 2024), "ferme", "license dp");
+        Contrat contrat1(1, Date(2, 4, 2024), "ferme", "license dp", clients, bien);
         contrat1.afficherContrat();
     }
     catch (const invalid_argument& e) {
@@ -95,9 +101,11 @@ int main() {
 
     cout << "\nExercice 4 : \n\n";
 
+    
+
     try {
         // Création d'un contrat avec des termes de contrat vides.
-        Contrat contrat2(101, Date(1, 4, 2024), "Location", "");
+        Contrat contrat2(101, Date(1, 4, 2024), "Location", "", clients, bien);
         cout << "Le contrat2 a ete cree : \n";
         contrat2.afficherContrat();
     }
@@ -107,7 +115,7 @@ int main() {
 
     try {
         // Création d'un contrat avec une mauvaise date.
-        Contrat contrat3(101, Date(0, 4, 2024), "Location", "Le contrat est contrarie");
+        Contrat contrat3(101, Date(0, 4, 2024), "Location", "Le contrat est contrarie", clients, bien);
         cout << "Le contrat3 a ete cree\n";
         contrat3.afficherContrat();
     }
@@ -117,7 +125,7 @@ int main() {
 
     try {
         // Création d'un contrat avec des bons paramètres.
-        Contrat contrat4(101, Date(1, 4, 2024), "Location", "Le contrat est contrarie");
+        Contrat contrat4(101, Date(1, 4, 2024), "Location", "Le contrat est contrarie", clients, bien);
         cout << "Le contrat4 a ete cree\n";
         contrat4.afficherContrat();
     }

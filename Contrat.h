@@ -2,6 +2,9 @@
 
 #include "Date.h"
 #include <string>
+#include "Personne.h"
+#include "BienImmobilier.h"
+#include <vector>
 
 using namespace std;
 
@@ -10,8 +13,11 @@ class Contrat {
 	Date date;
 	string typeContrat;
 	string termesContrat;
+	vector<Personne*> clients;
+	BienImmobilier* bien;
+
 public:
-	Contrat(int, Date, string, string);
+	Contrat(int, Date, string, string, vector<Personne*>, BienImmobilier*);
 	void afficherContrat() const;
 	void signerContrat();
 };

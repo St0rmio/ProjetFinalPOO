@@ -34,3 +34,7 @@
 x64/
 ProjetFinal/
 .vs/
+.idea
+.idea/
+cmake-build-debug/
+cmake-build-debug

@@ -14,6 +14,7 @@ Contrat::Contrat(int idContrat, Date date, string typeContrat, string termesCont
         this->termesContrat = termesContrat;
     this->clients = clients;
     this->bien = bien;
+    estSigne = false;
 }
 
 void Contrat::afficherContrat() const
@@ -23,4 +24,10 @@ void Contrat::afficherContrat() const
         << "\ntypeContrat : " << typeContrat
         << "\ntermesContrat : " << termesContrat
         << "\n";
+}
+
+void Contrat::signerContrat()
+{
+    estSigne = true;
+    cout << "Le contrat n°" << idContrat << " est signe.\n";
 }

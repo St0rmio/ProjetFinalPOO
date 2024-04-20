@@ -15,6 +15,7 @@ class Contrat {
 	string termesContrat;
 	vector<Personne*> clients;
 	BienImmobilier* bien;
+	bool estSigne;
 
 public:
 	Contrat(int, Date, string, string, vector<Personne*>, BienImmobilier*);

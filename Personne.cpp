@@ -17,3 +17,7 @@ void Personne::afficherInfos() const
         << "\ntelephone : " << telephone
         << "\n";
 }
+
+bool Personne::operator>(Personne& other) const {
+    return adresse.compare(other.adresse);
+}

@@ -1,6 +1,7 @@
 #include "BienImmobilier.h"
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -24,3 +25,11 @@ void BienImmobilier::afficherDetails() const {
 void BienImmobilier::mettreAJourStatut(string nouveauStatut) {
 	statut = nouveauStatut;
 }
+
+bool BienImmobilier::operator>(BienImmobilier& other) const {
+    return surface > other.surface;
+}
+
+
+
+

@@ -12,4 +12,5 @@ public:
 	BienImmobilier(int, string, double, string, string);
 	virtual void afficherDetails() const;
 	void mettreAJourStatut(string nouveauStatut);
+    bool operator>(BienImmobilier& other) const;
 };

@@ -9,6 +9,6 @@ class Transaction {
 	bool estEffectue;
 public:
 	Transaction(int, double, Date);
-	void afficherContrat() const;
+	void afficherTransaction() const;
 	void effectuerTransaction();
 };

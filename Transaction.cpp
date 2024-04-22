@@ -9,7 +9,7 @@ Transaction::Transaction(int idTransaction, double montant, Date dateTransaction
     estEffectue = false;
 }
 
-void Transaction::afficherContrat() const
+void Transaction::afficherTransaction() const
 {
     cout << "Contrat :\Id = " << idTransaction << "\nmontat = " << montant << "\nDate transaction = " << dateTransaction << endl;
 }

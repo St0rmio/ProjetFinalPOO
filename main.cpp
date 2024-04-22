@@ -13,6 +13,7 @@
 #include "Locataire.h"
 
 
+#include "Agence.h"
 #include "Contrat.h"
 #include "Date.h"
 
@@ -165,4 +166,42 @@ int main() {
     delete b2;
     delete p1;
     delete p2;
+
+
+    cout << "Exercice 6 :\n";
+
+    cout << "2 : \n\n";
+
+    BienImmobilier* ex6_2_bien1 = new Maison(1, "123 Rue A", 150.0, "Maison", "Libre", 3, 1, true);
+    BienImmobilier* ex6_2_bien2 = new Appartement(2, "456 Rue B", 80.0, "Appartement", "Occupe", 3, 4, false);
+    BienImmobilier* ex6_2_bien3 = new Terrain(3, "789 Rue C", 500.0, "Terrain", "Occupe", "Agricole");
+
+    Agence ag;
+    ag.ajouterBien(ex6_2_bien1);
+    ag.ajouterBien(ex6_2_bien2);
+    ag.ajouterBien(ex6_2_bien3);
+    cout << "Ajout de 3 biens dans l'agence.\n";
+    cout << "Le nombre de bien dans l'agence est : " << ag.GetBiens().size() << endl;
+
+    Client* ex6_2_p1 = new Client("Raoul", "1 Rue du Deux", "0607080910", "oui@non.fr");
+    Client* ex6_2_p2 = new Client("Anakin", "36 Avenue Tatooine", "1234567890", "68000");
+    ag.ajouterClient(ex6_2_p1);
+    ag.ajouterClient(ex6_2_p2);
+    cout << "Ajout de 2 clients dans l'agence.\n";
+    cout << "Le nombre de clients dans l'agence est : " << ag.GetPersonnes().size() << endl;
+
+    vector<Personne*> ex6_2_clients = { ex6_2_p1, ex6_2_p2 };
+    ag.creerContrat(Date(22, 04, 2024), "Vente", "Termes du contrat", ex6_2_clients, ex6_2_bien1);
+    cout << "Ajout de 1 contrat dans l'agence.\n";
+    cout << "Le nombre de contrats dans l'agence est : " << ag.GetContrats().size() << endl;
+    cout << "Le seul contrat est :\n";
+    ag.GetContrats().at(0).afficherContrat();
+    cout << endl;
+
+    Transaction ex6_2_transaction(1, 600, Date(2, 2, 2014));
+    ag.enregistrerTransaction(ex6_2_transaction);
+    cout << "Ajout de 1 transaction dans l'agence.\n";
+    cout << "Le nombre de transaction dans l'agence est : " << ag.GetTransactions().size() << endl;
+
+    
 }

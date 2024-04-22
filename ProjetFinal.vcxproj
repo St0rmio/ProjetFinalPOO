@@ -136,7 +136,7 @@
     <ClCompile Include="Locataire.cpp" />
     <ClCompile Include="Maison.cpp" />
     <ClCompile Include="Personne.cpp" />
-    <ClCompile Include="ProjetFinal.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Proprietaire.cpp" />
     <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="Transaction.cpp" />

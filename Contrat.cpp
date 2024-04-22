@@ -31,3 +31,8 @@ void Contrat::signerContrat()
     estSigne = true;
     cout << "Le contrat n°" << idContrat << " est signe.\n";
 }
+
+int Contrat::GetIdContrat() const
+{
+    return idContrat;
+}

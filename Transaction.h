@@ -6,7 +6,9 @@ class Transaction {
 	int idTransaction;
 	double montant;
 	Date dateTransaction;
+	bool estEffectue;
 public:
 	Transaction(int, double, Date);
+	void afficherContrat() const;
 	void effectuerTransaction();
 };

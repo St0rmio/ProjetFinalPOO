@@ -21,5 +21,7 @@ public:
 	Contrat(int, Date, string, string, vector<Personne*>, BienImmobilier*);
 	void afficherContrat() const;
 	void signerContrat();
+
+	int GetIdContrat() const;
 };
 

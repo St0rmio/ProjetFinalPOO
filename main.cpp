@@ -202,6 +202,4 @@ int main() {
     ag.enregistrerTransaction(ex6_2_transaction);
     cout << "Ajout de 1 transaction dans l'agence.\n";
     cout << "Le nombre de transaction dans l'agence est : " << ag.GetTransactions().size() << endl;
-
-    
 }

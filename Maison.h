@@ -7,5 +7,6 @@ class Maison : public BienImmobilier {
 	bool jardin;
 public:
 	Maison(int id, string adresse, double surface, string type, string statut, int nbPieces, int nbEtages, bool jardin);
+	~Maison() override;
 	void afficherDetails() const override;
 };

@@ -8,6 +8,10 @@ Maison::Maison(int id, string adresse, double surface, string type, string statu
 {
 }
 
+Maison::~Maison()
+{
+}
+
 void Maison::afficherDetails() const
 {
     BienImmobilier::afficherDetails();

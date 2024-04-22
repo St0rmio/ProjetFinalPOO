@@ -6,6 +6,10 @@ Appartement::Appartement(int id, string adresse, double surface, string type, st
 {
 }
 
+Appartement::~Appartement()
+{
+}
+
 void Appartement::afficherDetails() const
 {
     BienImmobilier::afficherDetails();

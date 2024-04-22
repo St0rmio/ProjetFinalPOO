@@ -8,6 +8,10 @@ Client::Client(string nom, string adresse, string telephone, string email) :
 {
 }
 
+Client::~Client()
+{
+}
+
 void Client::afficherInfos() const
 {
     Personne::afficherInfos();

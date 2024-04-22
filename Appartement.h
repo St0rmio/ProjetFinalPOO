@@ -7,5 +7,6 @@ class Appartement : public BienImmobilier {
 	bool terrasse;
 public:
 	Appartement(int id, string adresse, double surface, string type, string statut, int nbPieces, int etage, bool terrasse);
+	~Appartement() override;
 	void afficherDetails() const override;
 };

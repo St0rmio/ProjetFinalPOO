@@ -8,6 +8,10 @@ Terrain::Terrain(int id, string adresse, double surface, string type, string sta
 {
 }
 
+Terrain::~Terrain()
+{
+}
+
 void Terrain::afficherDetails() const
 {
     BienImmobilier::afficherDetails();

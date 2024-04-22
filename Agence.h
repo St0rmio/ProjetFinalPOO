@@ -14,6 +14,7 @@ class Agence {
 
 public:
 	Agence();
+	~Agence();
 	void ajouterBien(BienImmobilier*);
 	void ajouterClient(Client*);
 	void creerContrat(Date date, string typeContrat, string termesContrat, vector<Personne*> clients, BienImmobilier* bien);

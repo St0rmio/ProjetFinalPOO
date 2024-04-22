@@ -8,6 +8,10 @@ Locataire::Locataire(string nom, string adresse, string telephone, string garant
 {
 }
 
+Locataire::~Locataire()
+{
+}
+
 void Locataire::afficherInfos() const
 {
     Personne::afficherInfos();

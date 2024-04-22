@@ -11,6 +11,10 @@ Agence::Agence()
 	transactions = vector<Transaction>();
 }
 
+Agence::~Agence()
+{
+}
+
 void Agence::ajouterBien(BienImmobilier* bienImmo) {
 	biens.push_back(bienImmo);
 }

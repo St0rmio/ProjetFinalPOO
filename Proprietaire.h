@@ -8,5 +8,6 @@ private:
 
 public:
     Proprietaire(string nom, string adresse, string telephone, string numeroSIRET);
+    ~Proprietaire() override;
     void afficherInfos() const override;
 };

@@ -10,6 +10,7 @@ class BienImmobilier {
 	string statut;
 public:
 	BienImmobilier(int, string, double, string, string);
+	virtual ~BienImmobilier();
 	virtual void afficherDetails() const;
 	void mettreAJourStatut(string nouveauStatut);
     bool operator>(BienImmobilier& other) const;

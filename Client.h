@@ -8,5 +8,6 @@ private:
 
 public:
     Client(string nom, string adresse, string telephone, string email);
+    ~Client() override;
     void afficherInfos() const override;
 };

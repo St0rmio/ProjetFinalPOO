@@ -13,6 +13,10 @@ BienImmobilier::BienImmobilier(int id, string adresse, double surface, string ty
 	this->statut = statut;
 }
 
+BienImmobilier::~BienImmobilier()
+{
+}
+
 void BienImmobilier::afficherDetails() const {
 	cout << "id : " << id
 		<< "\nadresse : " << adresse

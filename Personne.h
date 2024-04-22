@@ -9,6 +9,7 @@ protected:
     string adresse;
 public:
 	Personne(string, string, string);
+	virtual ~Personne();
 	virtual void afficherInfos() const;
     bool operator>(Personne& other) const;
 

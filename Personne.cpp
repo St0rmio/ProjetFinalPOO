@@ -10,6 +10,10 @@ Personne::Personne(string nom, string adresse, string telephone) {
     this->telephone = telephone;
 }
 
+Personne::~Personne()
+{
+}
+
 void Personne::afficherInfos() const
 {
     cout << "nom : " << nom

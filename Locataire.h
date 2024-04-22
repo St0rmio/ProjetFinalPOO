@@ -8,5 +8,6 @@ private:
 
 public:
     Locataire(string nom, string adresse, string telephone, string garant);
+    ~Locataire() override;
     void afficherInfos() const override;
 };

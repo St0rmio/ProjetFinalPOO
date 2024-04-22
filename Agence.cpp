@@ -13,6 +13,13 @@ Agence::Agence()
 
 Agence::~Agence()
 {
+	for (BienImmobilier* bien : biens) {
+		delete bien;
+	}
+
+	for (Personne* personne : personnes) {
+		delete personne;
+	}
 }
 
 void Agence::ajouterBien(BienImmobilier* bienImmo) {
@@ -23,7 +30,7 @@ void Agence::ajouterClient(Client* client) {
 	personnes.push_back(client);
 }
 
-void Agence::creerContrat(Date date, string typeContrat, string termesContrat, vector<Personne*> clients, BienImmobilier* bien)
+void Agence::creerContrat(Date date, string typeContrat, string termesContrat, vector<Client*> clients, BienImmobilier* bien)
 {
 	try
 	{

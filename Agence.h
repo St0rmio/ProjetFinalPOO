@@ -17,7 +17,7 @@ public:
 	~Agence();
 	void ajouterBien(BienImmobilier*);
 	void ajouterClient(Client*);
-	void creerContrat(Date date, string typeContrat, string termesContrat, vector<Personne*> clients, BienImmobilier* bien);
+	void creerContrat(Date date, string typeContrat, string termesContrat, vector<Client*> clients, BienImmobilier* bien);
 	void enregistrerTransaction(const Transaction& transaction);
 	
 	vector<BienImmobilier*> GetBiens() const;

@@ -39,10 +39,10 @@ int main() {
     Personne p("Jean", "Rue de Gaulle", "513-513-8754");
     p.afficherInfos();
 
-    Personne* client2 = new Personne("Jean Dupont", "15 avenue des Lilas", "0123456789");
-    Personne* client3 = new Personne("Alice Martin", "30 rue de la Paix", "9876543210");
+    Client* client2 = new Client("Jean Dupont", "15 avenue des Lilas", "0123456789", "jean.dupont@gmail.com");
+    Client* client3 = new Client("Alice Martin", "30 rue de la Paix", "9876543210", "alice.martin@gmail.com");
 
-    vector<Personne*> clients = { client2, client3 };
+    vector<Client*> clients = { client2, client3 };
     BienImmobilier* bien = new BienImmobilier(1, "10 rue de la Paix", 150.0, "Maison", "� vendre");
     cout << "\nContrat : \n";
     try {
@@ -94,10 +94,13 @@ int main() {
     BienImmobilier* bien3 = new Terrain(3, "789 Rue C", 500.0, "Terrain", "Occupe", "Agricole");
 
     // Appel des m�thodes pour afficher les d�tails des diff�rents biens
+    cout << "Maison : \n";
     bien1->afficherDetails();
     cout << endl;
+    cout << "Appartement : \n";
     bien2->afficherDetails();
     cout << endl;
+    cout << "Terrain : \n";
     bien3->afficherDetails();
     cout << endl;
 
@@ -169,8 +172,7 @@ int main() {
 
 
     cout << "Exercice 6 :\n";
-
-    cout << "2 : \n\n";
+    cout << "1 et 2 : \n\n";
 
     BienImmobilier* ex6_2_bien1 = new Maison(1, "123 Rue A", 150.0, "Maison", "Libre", 3, 1, true);
     BienImmobilier* ex6_2_bien2 = new Appartement(2, "456 Rue B", 80.0, "Appartement", "Occupe", 3, 4, false);
@@ -190,9 +192,9 @@ int main() {
     cout << "Ajout de 2 clients dans l'agence.\n";
     cout << "Le nombre de clients dans l'agence est : " << ag.GetPersonnes().size() << endl;
 
-    vector<Personne*> ex6_2_clients = { ex6_2_p1, ex6_2_p2 };
+    vector<Client*> ex6_2_clients = { ex6_2_p1, ex6_2_p2 };
     ag.creerContrat(Date(22, 04, 2024), "Vente", "Termes du contrat", ex6_2_clients, ex6_2_bien1);
-    cout << "Ajout de 1 contrat dans l'agence.\n";
+    cout << "Ajout de 1 contrat dans l'agence avec les clients dans un vecteur et un bien.\n";
     cout << "Le nombre de contrats dans l'agence est : " << ag.GetContrats().size() << endl;
     cout << "Le seul contrat est :\n";
     ag.GetContrats().at(0).afficherContrat();
@@ -202,4 +204,6 @@ int main() {
     ag.enregistrerTransaction(ex6_2_transaction);
     cout << "Ajout de 1 transaction dans l'agence.\n";
     cout << "Le nombre de transaction dans l'agence est : " << ag.GetTransactions().size() << endl;
+
+    ag.~Agence();
 }

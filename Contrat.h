@@ -4,6 +4,7 @@
 #include <string>
 #include "Personne.h"
 #include "BienImmobilier.h"
+#include "Client.h"
 #include <vector>
 
 using namespace std;
@@ -13,15 +14,16 @@ class Contrat {
 	Date date;
 	string typeContrat;
 	string termesContrat;
-	vector<Personne*> clients;
+	vector<Client*> clients;
 	BienImmobilier* bien;
 	bool estSigne;
 
 public:
-	Contrat(int, Date, string, string, vector<Personne*>, BienImmobilier*);
+	Contrat(int, Date, string, string, vector<Client*>, BienImmobilier*);
 	void afficherContrat() const;
 	void signerContrat();
 
 	int GetIdContrat() const;
+	vector<Client*> GetClients() const;
 };
 

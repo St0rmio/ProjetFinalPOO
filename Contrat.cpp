@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Contrat::Contrat(int idContrat, Date date, string typeContrat, string termesContrat, vector<Personne*> clients, BienImmobilier* bien) {
+Contrat::Contrat(int idContrat, Date date, string typeContrat, string termesContrat, vector<Client*> clients, BienImmobilier* bien) {
     this->idContrat = idContrat;
     this->date = date;
     this->typeContrat = typeContrat;
@@ -23,6 +23,7 @@ void Contrat::afficherContrat() const
         << "\ndate : " << date
         << "\ntypeContrat : " << typeContrat
         << "\ntermesContrat : " << termesContrat
+        << "\nnombre de client : " << clients.size()
         << "\n";
 }
 
@@ -35,4 +36,9 @@ void Contrat::signerContrat()
 int Contrat::GetIdContrat() const
 {
     return idContrat;
+}
+
+vector<Client*> Contrat::GetClients() const
+{
+    return clients;
 }

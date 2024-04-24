@@ -11,7 +11,7 @@ Transaction::Transaction(int idTransaction, double montant, Date dateTransaction
 
 void Transaction::afficherTransaction() const
 {
-    cout << "Contrat :\Id = " << idTransaction << "\nmontat = " << montant << "\nDate transaction = " << dateTransaction << endl;
+    cout << "Contrat :\nId = " << idTransaction << "\nmontat = " << montant << "\nDate transaction = " << dateTransaction << endl;
 }
 
 void Transaction::effectuerTransaction()

@@ -20,7 +20,7 @@
 using namespace std;
 
 // EXERCICE 5
-// La fonction est conçue pour être utilisée avec les classes BienImmobilier & Personne.
+// La fonction est conçue pour être utilisee avec les classes BienImmobilier & Personne.
 template <class T> bool superComparison(T theFirst, T theSecond) {
     return theFirst > theSecond;
 }
@@ -93,7 +93,7 @@ int main() {
     BienImmobilier* bien2 = new Appartement(2, "456 Rue B", 80.0, "Appartement", "Occupe", 3, 4, false);
     BienImmobilier* bien3 = new Terrain(3, "789 Rue C", 500.0, "Terrain", "Occupe", "Agricole");
 
-    // Appel des m�thodes pour afficher les d�tails des diff�rents biens
+    // Appel des methodes pour afficher les details des differents biens
     cout << "Maison : \n";
     bien1->afficherDetails();
     cout << endl;
@@ -104,7 +104,7 @@ int main() {
     bien3->afficherDetails();
     cout << endl;
 
-    // Lib�ration de la m�moire
+    // Liberation de la m�moire
     delete bien1;
     delete bien2;
     delete bien3;
@@ -114,7 +114,7 @@ int main() {
     
 
     try {
-        // Cr�ation d'un contrat avec des termes de contrat vides.
+        // Creation d'un contrat avec des termes de contrat vides.
         Contrat contrat2(101, Date(1, 4, 2024), "Location", "", clients, bien);
         cout << "Le contrat2 a ete cree : \n";
         contrat2.afficherContrat();
@@ -124,7 +124,7 @@ int main() {
     }
 
     try {
-        // Cr�ation d'un contrat avec une mauvaise date.
+        // Creation d'un contrat avec une mauvaise date.
         Contrat contrat3(101, Date(0, 4, 2024), "Location", "Le contrat est contrarie", clients, bien);
         cout << "Le contrat3 a ete cree\n";
         contrat3.afficherContrat();
@@ -134,7 +134,7 @@ int main() {
     }
 
     try {
-        // Cr�ation d'un contrat avec des bons param�tres.
+        // Creation d'un contrat avec des bons param�tres.
         Contrat contrat4(101, Date(1, 4, 2024), "Location", "Le contrat est contrarie", clients, bien);
         cout << "Le contrat4 a ete cree\n";
         contrat4.afficherContrat();

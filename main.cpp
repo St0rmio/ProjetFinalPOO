@@ -104,7 +104,7 @@ int main() {
     bien3->afficherDetails();
     cout << endl;
 
-    // Liberation de la m�moire
+    // Liberation de la memoire
     delete bien1;
     delete bien2;
     delete bien3;
@@ -134,7 +134,7 @@ int main() {
     }
 
     try {
-        // Creation d'un contrat avec des bons param�tres.
+        // Creation d'un contrat avec des bons parametres.
         Contrat contrat4(101, Date(1, 4, 2024), "Location", "Le contrat est contrarie", clients, bien);
         cout << "Le contrat4 a ete cree\n";
         contrat4.afficherContrat();
